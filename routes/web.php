@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CalendarEventController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/calendar', [CalendarEventController::class, 'index']);
+Route::get('/calendar-actions', [CalendarEventController::class, 'calendarActions']);
